@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int findFactorial(int num);
+
+int main() {
+    int number;
+    long factorial = 1;
+
+    printf("Enter a positive integer: ");
+    scanf("%d", &number);
+
+    if (number < 0)
+        printf("Error! Factorial of a negative number doesn't exist.");
+    else {
+        factorial = findFactorial(number);
+        printf("Factorial of %d = %ld", number, factorial);
+    }
+
+    return 0;
+}
+
+int findFactorial(int num) {
+    if (num == 0)
+        return 1;
+    else
+        return num * findFactorial(num - 1);
+}
